@@ -8,7 +8,10 @@ import (
 	"github.com/comail/colog"
 	"github.com/davecgh/go-spew/spew"
 	"github.com/gozwave/gozw/application"
+	doorlock "github.com/gozwave/gozw/cc/door-lock"
+	switchbinary "github.com/gozwave/gozw/cc/switch-binary"
 	"github.com/gozwave/gozw/frame"
+	serialapi "github.com/gozwave/gozw/serial-api"
 	"github.com/gozwave/gozw/session"
 	"github.com/gozwave/gozw/transport"
 	"github.com/peterh/liner"
@@ -20,7 +23,7 @@ func init() {
 }
 
 func main() {
-	transport, err := transport.NewSerialPortTransport("/dev/tty.usbmodem1461", 115200)
+	transport, err := transport.NewSerialPortTransport("/dev/tty.usbmodem14301", 115200)
 	if err != nil {
 		panic(err)
 	}
